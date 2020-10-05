@@ -16,12 +16,12 @@ public class UserReg {
 		password.add("!@#$%^&*()");
 		password.add("--");
 		password.add("asdfghjkl");
-		password.add("15@1234568579");
+		password.add("15A123456857978965412");
 		password.add("15 0234568579");
 		password.add("abcderfgth");
-		password.add("b3123SD45685793");
+		password.add("SD45685793");
 
-		String regex = "^(?=.*?[A-Z])[~!@#$%^&*()+=\\w\\d.]{8,20}$";
+		String regex = "^(?=.*\\d)[~!@#$%^&*()+=\\w\\d.]{8,20}$";
 
 		Pattern pattern = Pattern.compile(regex);
 
