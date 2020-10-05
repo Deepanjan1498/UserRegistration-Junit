@@ -11,8 +11,8 @@ public class UserReg {
 		List<String> password = new ArrayList<String>();
 
 		password.add("456789");
-		password.add("@#$%2345");
-		password.add("AsDfGhJkl");
+		password.add("14Ju2345@a");
+		password.add("AsDfGhJk@l");
 		password.add("!@#$%^&*()");
 		password.add("--");
 		password.add("asdfghjkl");
@@ -21,7 +21,7 @@ public class UserReg {
 		password.add("abcderfgth");
 		password.add("SD45685793");
 
-		String regex = "^(?=.*\\d)[~!@#$%^&*()+=\\w\\d.]{8,20}$";
+		String regex = "(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,20}$";
 
 		Pattern pattern = Pattern.compile(regex);
 
