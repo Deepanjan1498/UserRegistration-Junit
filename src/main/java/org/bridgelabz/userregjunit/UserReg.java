@@ -52,8 +52,7 @@ public class UserReg {
 
 	public boolean MultipleEmailValidation(String email) {
 
-		return email
-				.matches("^[A-Za-z0-9]+([-\\+\\.][A-Za-z0-9]+)?@([A-Za-z0-9-]+)\\.([A-Za-z]{2,3})(\\.[A-Za-z]{1,3})?$");
+		return email.matches("^[A-Za-z0-9]+([-\\+\\.][A-Za-z0-9]+)?@([A-Za-z0-9-]+)\\.([A-Za-z]{2,3})(\\.[A-Za-z]{1,3})?$");
 	}
 
 }
