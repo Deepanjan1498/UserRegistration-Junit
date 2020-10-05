@@ -1,22 +1,24 @@
 package org.bridgelabz.userregjunit;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserReg {
 
 	public static void main(String[] args) {
-		List<String> firstName = new ArrayList<String>();
+		List<String> lastName = new ArrayList<String>();
 
-		firstName.add("Deepanjan");
-		firstName.add("DDepanja");
-		firstName.add("2elop");
+		lastName.add("Sharma");
+		lastName.add("sharMa");
+		lastName.add("2sma");
 		String regex = "^[A-Z]{1}[a-z]{2,}$";
 
 		Pattern pattern = Pattern.compile(regex);
 
-		for (String first : firstName) {
-			Matcher matcher = pattern.matcher(first);
+		for (String last : lastName) {
+			Matcher matcher = pattern.matcher(last);
 			System.out.println(matcher.matches());
 		}
 	}
