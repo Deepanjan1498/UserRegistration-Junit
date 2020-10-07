@@ -5,72 +5,113 @@ import org.junit.Test;
 
 public class UserRegTest {
 	@Test
-	public void givenFirstName_WhenProper_ShouldReturnHappy() {
-		UserReg user = new UserReg();
-		String result = user.validateFirstName("Deepanjan");
-		Assert.assertEquals("Happy", result);
+	public void givenFirstName_WhenProper_ShouldReturnTrue() {
+		try {
+			UserReg user = new UserReg();
+			boolean result = user.validateFirstName("Deepanjan");
+			Assert.assertTrue(result);
+		} catch (UserRegException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void givenFirstName_WhenWithNumbers_ShouldReturnSad() {
-		UserReg user = new UserReg();
-		String result = user.validateFirstName("Deepa43njan");
-		Assert.assertEquals("Sad", result);
+	public void givenFirstName_WhenInvalid_ShouldReturnFalse() {
+		try {
+			UserReg user = new UserReg();
+			boolean result = user.validateFirstName("Deepan43");
+			Assert.assertEquals("False", result);
+		} catch (UserRegException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void givenLastName_WhenProper_ShouldReturnHappy() {
-		UserReg user = new UserReg();
-		String result = user.validateLastName("Sharma");
-		Assert.assertEquals("Happy", result);
+	public void givenLastName_WhenProper_ShouldReturnTrue() {
+		try {
+			UserReg user = new UserReg();
+			boolean result = user.validateLastName("Sharma");
+			Assert.assertTrue(result);
+		} catch (UserRegException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void givenLastName_WhenWithNumbers_ShouldReturnSad() {
-		UserReg user = new UserReg();
-		String result = user.validateLastName("35sharma");
-		Assert.assertEquals("Sad", result);
+	public void givenLastName_WhenInvalid_ShouldReturnFalse() {
+		try {
+			UserReg user = new UserReg();
+			boolean result = user.validateLastName("shar56ma");
+			Assert.assertEquals("False", result);
+		} catch (UserRegException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void givenEmail_WhenProper_ShouldReturnHappy() {
-		UserReg user = new UserReg();
-		String result = user.validateEmail("deepanjansh34@gmail.com");
-		Assert.assertEquals("Happy", result);
+	public void givenEmail_WhenProper_ShouldReturnTrue() {
+		try {
+			UserReg user = new UserReg();
+			boolean result = user.validateEmail("deepanjansh34@gmail.com");
+			Assert.assertTrue(result);
+		} catch (UserRegException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void givenEmail_WhenViolatesRules_ShouldReturnSad() {
-		UserReg user = new UserReg();
-		String result = user.validateEmail("+dfhj@gmail.com.au.au");
-		Assert.assertEquals("Sad", result);
+	public void givenEmail_WhenInvalid_ShouldReturnFalse() {
+		try {
+			UserReg user = new UserReg();
+			boolean result = user.validateEmail("shar56ma.co.in.in");
+			Assert.assertEquals("False", result);
+		} catch (UserRegException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void givenMobile_WhenProper_ShouldReturnHappy() {
-		UserReg user = new UserReg();
-		String result = user.validateMobile("91 8695321470");
-		Assert.assertEquals("Happy", result);
+	public void givenMobile_WhenProper_ShouldReturnTrue() {
+		try {
+			UserReg user = new UserReg();
+			boolean result = user.validateMobile("91 8695321470");
+			Assert.assertTrue(result);
+		} catch (UserRegException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void givenMobile_WhenWithCharacters_ShouldReturnSad() {
-		UserReg user = new UserReg();
-		String result = user.validateMobile("98563214we");
-		Assert.assertEquals("Sad", result);
+	public void givenMobile_WhenInvalid_ShouldReturnFalse() {
+		try {
+			UserReg user = new UserReg();
+			boolean result = user.validateMobile("91889695321470");
+			Assert.assertEquals("False", result);
+		} catch (UserRegException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void givenPassword_WhenProper_ShouldReturnHappy() {
-		UserReg user = new UserReg();
-		String result = user.validatePassword("S2@wertyuhi");
-		Assert.assertEquals("Happy", result);
+	public void givenPassword_WhenProper_ShouldReturnTrue() {
+		try {
+			UserReg user = new UserReg();
+			boolean result = user.validatePassword("S9@ujkiloper56");
+			Assert.assertTrue(result);
+		} catch (UserRegException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void givenPassword_WhenViolatesRules_ShouldReturnSad() {
-		UserReg user = new UserReg();
-		String result = user.validatePassword("S23@olk");
-		Assert.assertEquals("Sad", result);
+	public void givenPassword_WhenInvalid_ShouldReturnFalse() {
+		try {
+			UserReg user = new UserReg();
+			boolean result = user.validatePassword("Sdfe@#$hji");
+			Assert.assertEquals("False", result);
+		} catch (UserRegException e) {
+			e.printStackTrace();
+		}
 	}
+
 }
