@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+import com.jplanes.blog.examples.model.validator.UserReg;
+
 @RunWith(Parameterized.class)
 public class ValidEmailTest {
 	private String email;
